@@ -82,12 +82,10 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Home</a>
                             <a href="about.php" class="nav-item nav-link">About</a>
-                            <a href="times.php" class="nav-item nav-link">Classes</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="allwedding.php" class="dropdown-item">Weddings</a>
-                                    <a href="allshoots.php" class="dropdown-item">Product Shoots</a>
+                                    <a href="allwedding.php" class="dropdown-item">Products</a>
                                 </div>
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
@@ -200,7 +198,7 @@
                     <i class="flaticon-barbell display-1 text-primary"></i>
                     <h3 class="text-uppercase my-4">Product Shoots</h3>
                     <p>Give your product that advantage over over brands</p>
-                    <a class="text-uppercase" href="allshoots.php">Book Service <i class="bi bi-arrow-right"></i></a>
+                    <a class="text-uppercase" href="allwedding.php">Book Service <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -208,7 +206,7 @@
                     <i class="flaticon-bodybuilding display-1 text-primary"></i>
                     <h3 class="text-uppercase my-4">Model Shoot</h3>
                     <p>Showcase your creativity in frame</p>
-                    <a class="text-uppercase" href="allshoots.php">Book Service <i class="bi bi-arrow-right"></i></a>
+                    <a class="text-uppercase" href="allwedding.php">Book Service <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
