@@ -1,12 +1,10 @@
 <?php
-// if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
-//     header('Location:../Login/login.php');
-//  };
-include("../controllers/cart_controller.php");
 session_start();
+if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
+    header('Location:../Login/login.php');
+ };
+include("../controllers/product_controller.php");
 $cid = $_SESSION['customer_id'];
-$countwed =count_weddingcart_ctr($cid);
-$countwed =count_shootcart_ctr($cid);
 ?>
 
 
@@ -16,7 +14,7 @@ $countwed =count_shootcart_ctr($cid);
 
 <head>
     <meta charset="utf-8">
-    <title>GYMSTER - Gym HTML Template</title>
+    <title>YesIDO</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -41,6 +39,7 @@ $countwed =count_shootcart_ctr($cid);
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -95,19 +94,17 @@ $countwed =count_shootcart_ctr($cid);
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Home</a>
                             <a href="about.php" class="nav-item nav-link">About</a>
-                            <a href="times.php" class="nav-item nav-link">Classes</a>
+                
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="wedding.php" class="dropdown-item">Weddings</a>
-                                    <a href="allshoots.php" class="dropdown-item">Product Shoots</a>
+                                    <a href="wedding.php" class="dropdown-item">Products</a>
                                 </div>
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
-                            <a href="../Login/register.php" class="nav-item nav-link">Register</a>
+                            <a href="cart.php" class="nav-item nav-link">Cart</a>
                         </div>
-                        <?php echo "<li> <a href='../actions/logout.php' onclick='onsignout()' ><i class='dropdown-item'></i> Logout</a> </li>"; ?>
-                        <a href="../Login/login.php" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">Logout</a>
+                        <?php echo "<li> <a href='../actions/logout.php' onclick='onsignout()' ><i class='fa fa-sign-out'></i> Logout</a> </li>";?>
                     </div>
                 </nav>
             </div>
@@ -119,13 +116,26 @@ $countwed =count_shootcart_ctr($cid);
     <div class="container-fluid bg-primary p-5 bg-hero mb-5">
         <div class="row py-5">
             <div class="col-12 text-center">
-                <h1 class="display-2 text-uppercase text-white mb-md-4">Confirm Payment</h1>
+                <h1 class="display-2 text-uppercase text-white mb-md-4">Payment Done</h1>
                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Home</a>
-                <a href="allwedding.php" class="btn btn-light py-md-3 px-md-5">Wedding</a>
+                <a href="allwedding.php" class="btn btn-light py-md-3 px-md-5">Continue Shopping</a>
             </div>
         </div>
     </div>
     <!-- Hero End -->
+
+
+    </style>
+
+
+	<header class="site-header" id="header">
+		<h1 class="site-header__title text-center" data-lead-id="site-header-title">THANK YOU!</h1>
+	</header>
+
+	<div class="main-content text-center">
+		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<p class="main-content__body" data-lead-id="main-content-body text-center">Thank you for booking a service.</p>
+	</div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary px-5 mt-5">
