@@ -74,5 +74,7 @@ if($delcart == true){
 
 }
 
+header('Location:../view/payment_done.php');
+
 
 ?>
