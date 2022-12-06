@@ -226,9 +226,9 @@ $total=total_cart_price_ctr($cid);
 
             event.preventDefault();
             let handler = PaystackPop.setup({
-                //  key: 'pk_test_057c9db199308fc4166825e8b57cc8510a316319',
+                 key: 'pk_test_057c9db199308fc4166825e8b57cc8510a316319',
                 
-                key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd',
+                // key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd',
                
                 email: document.getElementById("email").value,
                 amount: document.getElementById("amount5").value * 100,
