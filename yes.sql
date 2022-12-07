@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: us-cdbr-east-06.cleardb.net
--- Generation Time: Dec 06, 2022 at 07:01 PM
+-- Generation Time: Dec 06, 2022 at 12:42 PM
 -- Server version: 5.6.50-log
 -- PHP Version: 7.4.29
 
@@ -32,16 +32,6 @@ CREATE TABLE `brands` (
   `brand_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `brands`
---
-
-INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
-(4, 'Formal '),
-(14, 'Vintage'),
-(24, 'Civil'),
-(34, 'Traditional');
-
 -- --------------------------------------------------------
 
 --
@@ -55,14 +45,6 @@ CREATE TABLE `cart` (
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`p_id`, `ip_add`, `c_id`, `qty`) VALUES
-(34, '::1', 4, 1),
-(34, '::1', 14, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -73,15 +55,6 @@ CREATE TABLE `categories` (
   `cat_id` int(11) NOT NULL,
   `cat_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
-(4, 'Wedding'),
-(14, 'Wedding'),
-(84, 'Shoot');
 
 -- --------------------------------------------------------
 
@@ -100,15 +73,6 @@ CREATE TABLE `customer` (
   `customer_image` varchar(100) DEFAULT NULL,
   `user_role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_image`, `user_role`) VALUES
-(4, 'Ben Augustt', 'benaugustt@gmail.com', '$2y$10$gbzX4h9FeQtSOEwqaxqdleefruyrwTWxRbivGZXmVq/kHtHCRNh8K', 'Ghana', 'Accra', '0544262308', '', 2),
-(14, 'Bright Augustt', 'bright.augustt@ashesi.edu.gh', '$2y$10$GZMwJnMT9aXlAd6amIyS1OdCGu.WDmUhZ4GYwgTucY7q6XQg8CUqK', 'Ghana', 'Accra', '0544262308', '', 2),
-(24, 'admin', 'swift@gmail.com', '$2y$10$K0nhwviwUdDrHXDmzilOWuBF3jEs.A1QNXfOGO5vBOQot3Lf.Bgui', 'Ghana', 'Accra', '0544262301', '', 1);
 
 -- --------------------------------------------------------
 
@@ -136,15 +100,6 @@ CREATE TABLE `orders` (
   `order_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES
-(4, 4, 315144583, '2022-12-06', 'success'),
-(14, 4, 725064634, '2022-12-06', 'success'),
-(24, 4, 1819023054, '2022-12-06', 'success');
-
 -- --------------------------------------------------------
 
 --
@@ -159,15 +114,6 @@ CREATE TABLE `payment` (
   `currency` text NOT NULL,
   `payment_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `payment`
---
-
-INSERT INTO `payment` (`pay_id`, `amt`, `customer_id`, `order_id`, `currency`, `payment_date`) VALUES
-(4, 0, 4, 4, 'GHS', '2022-12-06'),
-(14, 0, 4, 14, 'GHS', '2022-12-06'),
-(24, 0, 4, 24, 'GHS', '2022-12-06');
 
 -- --------------------------------------------------------
 
@@ -185,15 +131,6 @@ CREATE TABLE `products` (
   `product_image` varchar(100) DEFAULT NULL,
   `product_keywords` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
-(14, 14, 14, 'Military Wedding', 2050, 'Military Wedding', 'military-1670330666.png', 'Military'),
-(24, 84, 14, 'Vintage Model Shoot', 3400, 'Showcase your creativity in one picture', 'model-1670334078.jpg', 'model'),
-(34, 4, 4, 'Formal Wedding', 1, 'Capture a thousand memories in one picture', 'glamwed-1670334172.jpg', 'glam,wed');
 
 --
 -- Indexes for dumped tables
@@ -263,37 +200,37 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
